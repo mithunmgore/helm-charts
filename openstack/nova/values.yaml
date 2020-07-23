@@ -604,6 +604,19 @@ postgresql_cell2:
       reserve_pool_size: 100
       idle_transaction_timeout: 60
 
+db_name: nova
+
+mariadb:
+  enabled: false
+  buffer_pool_size: "4096M"
+  log_file_size: "1024M"
+  name: nova
+  persistence_claim:
+    name: db-nova-pvclaim
+  backup:
+    enabled: true
+    image_version: v0.6.4
+
 rabbitmq_cell2:
   name: nova-cell2
   persistence:
